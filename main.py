@@ -69,7 +69,8 @@ if page == "Главная":
     st.write("---")
     # Добавляем еще больше радости
     st.image(
-        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTjJp8A6sD7D1m/giphy.gif")
+        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif",
+        use_container_width=True)
     st.info("Выбери раздел в меню слева, чтобы начать наше путешествие во времени!")
 else:
     st.title(page)
