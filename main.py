@@ -4,22 +4,31 @@ import os
 # Настройка страницы
 st.set_page_config(page_title="Подарок для мамы", page_icon="❤️", layout="centered")
 
-# --- СТИЛИ (КРАСИВЫЙ ФОН) ---
+# --- СТИЛИ (ГЛУБОКИЙ ФИОЛЕТОВЫЙ ФОН) ---
 st.markdown("""
     <style>
+    /* Основной фон всей страницы */
     .stApp {
-        background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+        background: linear-gradient(135deg, #2E0249 0%, #570A57 100%);
+    }
+    /* Цвет заголовка и текста для контраста */
+    h1, h2, h3, p, div {
+        color: #F8EDE3 !important;
     }
     .main-title {
-        color: #D63384;
         text-align: center;
         font-size: 3em;
         font-family: 'Arial', sans-serif;
+        text-shadow: 2px 2px 4px #000;
     }
     .sub-title {
-        color: #555;
         text-align: center;
         font-size: 1.2em;
+    }
+    /* Стили для кнопок */
+    div.stButton > button {
+        background-color: #A91079;
+        color: white;
     }
     </style>
     """, unsafe_allow_html=True)
