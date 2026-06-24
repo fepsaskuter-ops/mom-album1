@@ -83,7 +83,7 @@ def show_section(folder_name):
 
 
 # --- МЕНЮ ---
-menu = ["Главная", "Детство", "Путешествия", "Взрослая жизнь"]
+menu = ["Главная", "Детство", "Путешествия", "Взрослая жизнь", "Финал"]
 page = st.sidebar.radio("Навигация:", menu)
 
 if page == "Главная":
@@ -91,11 +91,30 @@ if page == "Главная":
     st.markdown("<p class='sub-title'>Добро пожаловать в наш альбом теплых воспоминаний</p>", unsafe_allow_html=True)
     st.write("---")
     st.info("Выбери раздел в меню слева, чтобы начать наше путешествие во времени!")
-else:
-    st.title(page)
-    music_map = {"Детство": "childhood.mp3", "Путешествия": "travels.mp3", "Взрослая жизнь": "adulthood.mp3"}
-    if page in music_map and os.path.exists(music_map[page]):
-        st.audio(music_map[page])
+    else:
+    if page == "Финал":
+        st.markdown("<h1 style='text-align: center;'>Спасибо, Мама! ❤️</h1>", unsafe_allow_html=True)
+        st.markdown("""
+            <div style="
+                background-color: #FF85B3; 
+                padding: 30px; 
+                border-radius: 20px; 
+                text-align: center; 
+                margin-top: 20px;
+            ">
+                <h2 style="color: #4A0E3E !important;">Ты — самое дорогое, что у меня есть.</h2>
+                <p style="color: #4A0E3E !important; font-size: 1.2em;">
+                    Спасибо за твою любовь, поддержку и терпение.<br>
+                    Пусть каждый твой день будет таким же светлым,<br>
+                    как эти воспоминания. Я тебя очень люблю!
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.title(page)
+        music_map = {"Детство": "childhood.mp3", "Путешествия": "travels.mp3", "Взрослая жизнь": "adulthood.mp3"}
+        if page in music_map and os.path.exists(music_map[page]):
+            st.audio(music_map[page])
 
-    folder_map = {"Детство": "childhood", "Путешествия": "travels", "Взрослая жизнь": "adulthood"}
-    show_section(folder_map[page])
+        folder_map = {"Детство": "childhood", "Путешествия": "travels", "Взрослая жизнь": "adulthood"}
+        show_section(folder_map[page])
