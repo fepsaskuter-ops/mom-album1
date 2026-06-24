@@ -65,9 +65,21 @@ def show_section(folder_name):
 
     st.image(os.path.join(path, files[idx]), use_container_width=True)
 
+    # Вывод подписи в заполненном розовом блоке
     if folder_name in captions_list and idx < len(captions_list[folder_name]):
-        st.markdown(f"<h3 style='text-align: center; color: #333;'>{captions_list[folder_name][idx]}</h3>",
-                    unsafe_allow_html=True)
+        st.markdown(f"""
+                <div style="
+                    background-color: #FF85B3; 
+                    padding: 15px; 
+                    border-radius: 15px; 
+                    text-align: center; 
+                    margin-top: 15px;
+                ">
+                    <h3 style="color: #4A0E3E !important; margin: 0; font-weight: bold;">
+                        {captions_list[folder_name][idx]}
+                    </h3>
+                </div>
+            """, unsafe_allow_html=True)
 
 
 # --- МЕНЮ ---
