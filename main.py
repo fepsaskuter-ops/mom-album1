@@ -19,6 +19,7 @@ st.markdown("""
     .sub-title {
         color: #555;
         text-align: center;
+        font-size: 1.2em;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -35,6 +36,7 @@ captions_list = {
 
 def show_section(folder_name):
     path = os.path.join("photos", folder_name)
+    # Сортируем по алфавиту
     files = sorted([f for f in os.listdir(path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))])
 
     if not files:
@@ -59,7 +61,7 @@ def show_section(folder_name):
                     unsafe_allow_html=True)
 
 
-# --- МЕНЮ И ЛОГИКА ---
+# --- МЕНЮ ---
 menu = ["Главная", "Детство", "Путешествия", "Взрослая жизнь"]
 page = st.sidebar.radio("Навигация:", menu)
 
@@ -67,10 +69,6 @@ if page == "Главная":
     st.markdown("<h1 class='main-title'>С днем рождения, Мама! ❤️</h1>", unsafe_allow_html=True)
     st.markdown("<p class='sub-title'>Добро пожаловать в наш альбом теплых воспоминаний</p>", unsafe_allow_html=True)
     st.write("---")
-    # Добавляем еще больше радости
-    st.image(
-        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6ZzB6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif",
-        use_container_width=True)
     st.info("Выбери раздел в меню слева, чтобы начать наше путешествие во времени!")
 else:
     st.title(page)
